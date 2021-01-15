@@ -1,17 +1,17 @@
 from rest_framework import serializers
 
-from .models import Vacancies
+from .models import Services
 
 
-class VacanciesListSerializer(serializers.ModelSerializer):
+class ServicesListSerializer(serializers.ModelSerializer):
     class Meta:
-        model = Vacancies
-        fields = ("title", "description", "image")
+        model = Services
+        fields = ("naimenovaniye", "range_prices", "id_repair_type", "id_type_of_work", "id_object", "id_duration")
 
 
-class VacanciesDetailSerializer(serializers.ModelSerializer):
-    id_employer = serializers.SlugRelatedField(slug_field="name", read_only=True)
+class ServicesDetailSerializer(serializers.ModelSerializer):
+    id_repair_type = serializers.SlugRelatedField(slug_field="naimenovaniye", read_only=True)
 
     class Meta:
-        model = Vacancies
+        model = Services
         exclude = ("")

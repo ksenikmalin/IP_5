@@ -1,5 +1,5 @@
 from import_export import resources
-from agency.models import Services
+from repairs.models import Services
 
 
 class ServicesResources(resources.ModelResource):

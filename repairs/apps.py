@@ -1,5 +1,5 @@
 from django.apps import AppConfig
 
 
-class CareersConfig(AppConfig):
-    name = 'careers'
+class RepairsConfig(AppConfig):
+    name = 'repairs'

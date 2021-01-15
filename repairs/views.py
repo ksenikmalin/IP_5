@@ -4,31 +4,31 @@ from django.views.generic.base import View
 from rest_framework.response import Response
 from rest_framework.views import APIView
 
-from .serializers import VacanciesListSerializer, VacanciesDetailSerializer
-from .models import Vacancies
+from .serializers import ServicesListSerializer, ServicesDetailSerializer
+from .models import Services
 
-
-class VacanciesView(View):
+Services
+class ServicesView(View):
     def get(self, request):
-        vacancies = Vacancies.objects.all()
-        return render(request, "vacancy_list.html", {"vacancy_list": vacancies})
+        services = Services.objects.all()
+        return render(request, "service_list.html", {"service_list": services})
 
 
-class VacanciesListAPIView(APIView):
+class ServicesListAPIView(APIView):
     def get(self, request):
-        vacancies = Vacancies.objects.all()
-        serializer = VacanciesListSerializer(vacancies, many=True)
+        services = Services.objects.all()
+        serializer = ServicesListSerializer(services, many=True)
         return Response(serializer.data)
 
 
-class VacanciesDetailView(View):
+class ServicesDetailView(View):
     def get(self, request, pk):
-        vacancy = Vacancies.objects.get(id=pk)
-        return render(request, "vacancy_detail.html", {"vacancy": vacancy})
+        service = Services.objects.get(id=pk)
+        return render(request, "service_detail.html", {"service": service})
 
 
-class VacanciesDetailAPIView(APIView):
+class ServicesDetailAPIView(APIView):
     def get(self, request, pk):
-        vacancy = Vacancies.objects.get(id=pk)
-        serializer = VacanciesDetailSerializer(vacancy)
+        service = Services.objects.get(id=pk)
+        serializer = ServicesDetailSerializer(service)
         return Response(serializer.data)

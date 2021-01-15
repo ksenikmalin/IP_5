@@ -6,7 +6,7 @@ class Сlient(models.Model):
     patronymic = models.CharField("Отчество", max_length=150)
     number_phone = models.CharField("Номер телефона", max_length=20)
     email = models.EmailField("Электронная почта", max_length=255)
-    password = models.CharField("Пароль", max_length=150)
+
     
     def __str__(self):
         return self.name
@@ -129,7 +129,7 @@ class Portfolio(models.Model):
         verbose_name_plural = "Портфолия"
 
 class Reviews(models.Model):
-    text = models.CharField("текст")
+    text = models.CharField("текст", max_length=250)
 
     id_client = models.ForeignKey(Сlient, verbose_name="Клиент", on_delete=models.SET_NULL, null=True)
 

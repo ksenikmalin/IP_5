@@ -6,18 +6,18 @@ from .models import Сlient, Order_status, Object, Repair_type, Type_of_work, Du
 
 @admin.register(Сlient)
 class СlientAdmin(ImportExportModelAdmin):
-    list_display = ("surname", "name", "patronymic", "number_phone", "email", "password")
+    list_display = ("surname", "name", "patronymic", "number_phone", "email")
     pass
 
 
 @admin.register(Order_status)
 class Order_statusAdmin(ImportExportModelAdmin):
-    list_display = ("naimenovaniye")
+    list_display = ("naimenovaniye",)
     pass
 
 @admin.register(Object)
 class ObjectAdmin(ImportExportModelAdmin):
-    list_display = ("naimenovaniye")
+    list_display = ("naimenovaniye",)
     pass
 
 @admin.register(Repair_type)
@@ -32,7 +32,7 @@ class Type_of_workAdmin(ImportExportModelAdmin):
 
 @admin.register(Duration)
 class DurationAdmin(ImportExportModelAdmin):
-    list_display = ("amount_of_days")
+    list_display = ("amount_of_days",)
     pass
 
 @admin.register(Services)
@@ -67,5 +67,5 @@ class Back_callAdmin(ImportExportModelAdmin):
 
 @admin.register(Call_application_status)
 class Call_application_statusAdmin(ImportExportModelAdmin):
-    list_display = ("naimenovaniye")
+    list_display = ("naimenovaniye",)
     pass

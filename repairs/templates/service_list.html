@@ -13,21 +13,17 @@
         {% for services in Services_list %}
     <div class="col-3">
         <div class="card" style="width: 18rem; height: 25rem;">
-            <div class="card-body">
+          <div class="card-body">
             <h5 class="card-title">{{ services.naimenovaniye }}</h5>
-            <p class="card-text">{{ services.range_prices}}</p>
             <p class="card-text">{{ services.id_repair_type}}</p>
             <p class="card-text">{{ services.id_type_of_work}}</p>
-            <p class="card-text">{{ services.id_object}}</p>
-            <p class="card-text">{{ services.id_duration}}</p>
-            <a href="/{{ order.id_order }}" class="btn btn-primary">Заказать услугу</a>
+            <a href="/{{ services.id }}" class="btn btn-primary">Подробнее</a>
           </div>
         </div>
-
-      
     </div>
       {% endfor %}
   </div>
+    <a href="/admin" class="btn btn-link mt-5">Панель администратора</a>
 </div>
 
 </body>
